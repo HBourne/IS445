@@ -21,9 +21,8 @@
             "data": { "url": "data/building_inventory.csv" },
             "mark": "circle",
             "encoding": {
-                "x": { "field": "A", "Year Acquired": "quantitative" },
-                "y": { "field": "B", "Year Constructed": "quantitative" },
-                "size": { "field": "C", "type": "quantitative" }
+                "x": { "field": "Year Constructed", "type": "quantitative" },
+                "y": { "field": "Year Acquired", "type": "quantitative" },
             }
         };
         vegaEmbed('#viz', vlSpec);
