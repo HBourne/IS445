@@ -19,6 +19,14 @@
         var vlSpec = {
             "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
             "data": { "url": "data/building_inventory.csv" },
+            "transform": [
+                {
+                    "and": [
+                        { "filter": { "field": "Year Acquired", "equal": 0 } },
+                        { "filter": { "field": "Year Constructed", "equal": 0 } }
+                    ]
+                }
+            ],
             "mark": "circle",
             "encoding": {
                 "x": { "field": "Year Constructed", "type": "quantitative" },
