@@ -35,8 +35,20 @@
             ],
             "mark": "circle",
             "encoding": {
-                "x": { "field": "Year Constructed", "type": "quantitative" },
-                "y": { "field": "Year Acquired", "type": "quantitative" },
+                "x": {
+                    "field": "Year Constructed",
+                    "type": "quantitative",
+                    "scale": {
+                        "domain": [1750, 2020]
+                    }
+                },
+                "y": {
+                    "field": "Year Acquired",
+                    "type": "quantitative",
+                    "scale": {
+                        "domain": [1750, 2020]
+                    }
+                },
             }
         };
         vegaEmbed('#viz', vlSpec);
