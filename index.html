@@ -5,6 +5,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@5.16.1"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.16.2"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+    <link rel="stylesheet" type="text/css" href="index.css">
 </header>
 
 <head>
@@ -14,7 +15,20 @@
 </head>
 
 <body>
-    <div id="viz"></div>
+    <h1 class="title">
+        IS445 Assignment 4
+    </h1>
+
+    <div class="answer">
+        <p>
+            This is a visualization of building_inventory.csv, which represents the Year Acquired vs. Year Constructed.
+        </p>
+    </div>
+
+    <div class="viz-wrapper">
+        <div id="viz"></div>
+    </div>
+
     <script>
         var vlSpec = {
             "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
