@@ -16,7 +16,7 @@
 
 <body>
     <h1 class="title">
-        IS445 Assignment 4
+        IS445 Assignment 6
     </h1>
 
     <div class="viz-wrapper">
@@ -55,21 +55,23 @@
                 res.view.change('table', cs).run();
             });
 
-            data.push({ 'x': newX, 'y': newY });
+            data.push([newX, newY]);
+            console.log(data);
         });
 
         document.getElementById("delete").addEventListener("click", function onButtonClick(event) {
             var deleteIdx = Math.floor(Math.random() * data.length);
-
+            var targetData = data[deleteIdx];
             var cs = vega.changeset().remove(t => {
-                return t.x == data[deleteIdx]["x"] && t.y == data[deleteIdx]["y"];
+                return t.x == targetData[0] && t.y == targetData[1];
             });
 
-            embedded.then(res => {
+          	embedded.then(res => {
                 res.view.change('table', cs).run();
             });
-
+            
             data.splice(deleteIdx, 1);
+            console.log(data);
         });
     </script>
 </body>
