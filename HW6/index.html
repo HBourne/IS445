@@ -62,7 +62,7 @@
             var deleteIdx = Math.floor(Math.random() * data.length);
 
             var cs = vega.changeset().remove(t => {
-                return t.x == data[deleteIdx].x && t.y == data[deleteIdx].y;
+                return t.x == data[deleteIdx]["x"] && t.y == data[deleteIdx]["y"];
             });
 
             embedded.then(res => {
