@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+<header>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.16.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.16.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</header>
+
+<head>
+    <title>
+        IS445 Assignment 6
+    </title>
+</head>
+
+<body>
+    <h1 class="title">
+        IS445 Assignment 4
+    </h1>
+
+    <div class="viz-wrapper">
+        <div id="vega"></div>
+        <button id="add">Click to insert</button>
+        <button id="delete">Click to delete</button>
+    </div>
+
+    <script>
+        var vis2spec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+            "description": "A scatterplot",
+            "data": {
+                "name": "table",
+                "values": []
+            },
+            "mark": "point",
+            "encoding": {
+                "x": { "field": "x", "type": "quantitative" },
+                "y": { "field": "y", "type": "quantitative" }
+            }
+        };
+
+        var embedded = vegaEmbed('#vega', vis2spec, { 'actions': false });
+        var data = [];
+
+        document.getElementById("add").addEventListener("click", function onButtonClick(event) {
+            var newX = Math.random() * 5;
+            var newY = Math.random() * 10;
+
+            var cs = vega.changeset().insert([
+                { 'x': newX, 'y': newY }
+            ]);
+
+            embedded.then(res => {
+                res.view.change('table', cs).run();
+            });
+
+            data.push({ 'x': newX, 'y': newY });
+        });
+
+        document.getElementById("delete").addEventListener("click", function onButtonClick(event) {
+            var deleteIdx = Math.floor(Math.random() * data.length);
+
+            var cs = vega.changeset().remove(t => {
+                return t.x == data[deleteIdx].x && t.y == data[deleteIdx].y;
+            });
+
+            embedded.then(res => {
+                res.view.change('table', cs).run();
+            });
+
+            data.splice(deleteIdx, 1);
+        });
+    </script>
+</body>
+
+</html>

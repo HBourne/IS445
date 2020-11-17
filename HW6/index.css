@@ -1,0 +1,14 @@
+.title {
+    display: flex;
+    justify-content: left;
+    font-weight: lighter;
+    margin-left: 30px;
+}
+
+.viz-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
