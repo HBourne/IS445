@@ -1,0 +1,82 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.panel {
+    border: 5px solid;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 30px;
+    font-weight: 900;
+    font-family: 'Lucida Console',monospace;
+}
+
+.location {
+    font-size: 30px;
+}
+
+.sign {
+    font-size: 50px;
+    margin-top: -15px;
+}
+
+.temperature {
+    font-size: 30px;
+}
+
+.brief {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: Monaco,monospace;
+}
+
+.period {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 50px;
+}
+
+.period-card {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid;
+    width: 100px;
+    height: 150px;
+    align-items: center;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left, red, orange);
+    font-family: 'Lucida Console',monospace;
+}
+
+.daytime {
+    font-size: 18px;
+    font-weight: lighter;
+    padding-top: 10px;
+}
+
+.period-sign {
+    font-size: 50px;
+    padding-top: 5px;
+}
+
+.period-temperature {
+    font-size: 18px;
+    padding-top: 3px;
+}
